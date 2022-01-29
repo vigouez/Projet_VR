@@ -1,14 +1,16 @@
 # Projet_VR
 
 <br/><br/><br/><br/>
-Si vous faites un push n'oubliais pas d'être dans la bonne version d'unity (2019.4.21)
+- Si vous faites un push n'oubliais pas d'être dans la bonne version d'unity (2019.4.21)
 sinon ça va être la merde
+- Script "DebugMessage" utile
+- Regrouper les scripts pour la grue dans un même dossier ? (actuellement dans "Grue" et dans "Assets")
+<br/><br/><br/><br/>
+
 
 Idées pour le README :
-- Mettre une image du casque utilisé
-- Mettre une image de chaque serious game
-- (Créer un dossier "Ressources" ou "Images" dans le dépot pour pouvoir y ajouter les images à mettre dans le README)
 - Projet réalisé dans le cadre du cours de Réalité augmentée en 3ème année filière F1
+- Version d'Unity de développement : 2019.4.21
 - Projet réalisé par 5 élèves : 1 groupe de 2 et 1 groupe de 3
 - Explications de chaque serious game et de tout ce qui a été fait dessus :
   - Grue :

@@ -1,6 +1,9 @@
 # Projet_VR
 
 <br/><br/><br/><br/>
+Si vous faites un push n'oubliais pas d'être dans la bonne version d'unity (2019.4.21)
+sinon ça va être la merde
+
 Idées pour le README :
 - Mettre une image du casque utilisé
 - Mettre une image de chaque serious game

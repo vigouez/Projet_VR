@@ -21,14 +21,15 @@ public class GestionSound : MonoBehaviour
         // Ajout d'un composant audio à l'objet possédant le script
         gameObject.AddComponent<AudioSource>();
         
-        // Récupération du composant émettant le son
+        // Récupération du composant de l'objet émettant le son
         my_audioSource = GetComponent<AudioSource>();
 
+        // Si l'AudioSource et le son passé en paramètre existent
         if(my_audioSource != null && my_audioClip != null)
         {
             // Set du son
             my_audioSource.clip = my_audioClip;
-
+            // Paramétrage de l'AudioSource
             my_audioSource.playOnAwake = isPlayedOnAwake;
             my_audioSource.loop = isLoop;
             my_audioSource.volume = my_volume;
@@ -52,7 +53,7 @@ public class GestionSound : MonoBehaviour
 
     public void StopSon()
     {
-        if (my_audioSource != null && my_audioClip != null)
+        if (my_audioSource != null)
         {
             // Arrêt du son
             my_audioSource.Stop();

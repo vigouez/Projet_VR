@@ -19,7 +19,7 @@ public class KeybordKey : MonoBehaviour
     }
 
     void keyPressed() {
-        Debug.Log("key");
+        // Event d'envoie de la touche pressée sur le clavier virtuel
         EventManager.TriggerEvent("key", new EventParamKey(c));
     }
 }

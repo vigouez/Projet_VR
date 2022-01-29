@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GestionAffichageEcran : MonoBehaviour
 {
-
     MeshRenderer affichage;
+    // Les différentes images à afficher sur l'écran de la console
     [SerializeField]
     Material matError;
     [SerializeField]
@@ -33,6 +33,8 @@ public class GestionAffichageEcran : MonoBehaviour
         
     }
 
+    // En fonction de la valeur de l'event, on affiche l'image correspondante sur l'écran de la console
+    // Les lumières verte et rouges sont aussi activées/désactivées
     void UpdateScreen(EventParam evenement)
     {
         EventAffichageEcran evenementString = (EventAffichageEcran)evenement;

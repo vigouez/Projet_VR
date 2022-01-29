@@ -21,21 +21,28 @@ public class ScoreManager : MonoBehaviour
         
     }
 
+    // On met à jour le nombre de pneu bien catégorisé dans les bonnes bennes
     void UpdateSommePneus(EventParam evenement)
     {
         EventComptagePneus evenementComptagePneus = (EventComptagePneus)evenement;
         NombrePneus += evenementComptagePneus.Value;
-        Debug.Log("NombrePneus : " + NombrePneus);
+        
+        // Quand le nombre de pneu atteind 10, on fini le serious game
         if (NombrePneus >= 10)
         {
             listePneus = GameObject.FindGameObjectsWithTag("Pneu");
             foreach (GameObject pneu in listePneus)
             {
+                // Destruction de chaque pneu instanciés
                 Destroy(pneu);
+
                 EventParamBool resetJeu = new EventParamBool();
                 resetJeu.Value = true;
+                // On remet à 0 le nombre de pneus correctement catégorisés
                 EventManager.TriggerEvent("ResetNombrePneus", resetJeu);
             }
+            
+            // On arrête le chrono du serious game
             EventManager.TriggerEvent("stopPneus", new EventParam());
         }
     }

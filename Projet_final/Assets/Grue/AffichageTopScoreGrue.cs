@@ -20,6 +20,7 @@ public class AffichageTopScoreGrue : MonoBehaviour
         affiche();
     }
 
+    // A chaque ajout d'un nouveau score, re-affichage des scores
     void chgScores(EventParam e)
     {
         _scores = "         Top Scores :\n\n";

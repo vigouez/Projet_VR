@@ -7,13 +7,14 @@ public class SpawneurPneuScript : MonoBehaviour
     [SerializeField]
     private GameObject PrefabPneu;
     [SerializeField]
-    private GameObject SpawnPoint1;
+    private GameObject SpawnPoint;
     private bool BoutonDejaPresse;
-
 
     // Start is called before the first frame update
     void Start()
     {
+        // Cet attribut empêche l'utilisateur de faire apparaître plusieurs fois les pneus à chaque appui sur le bouton d'apparition
+        // Il faut soit finir, soit arrêter le serious game, pour avoir à nouveau le droit de faire apparaître des pneus
         BoutonDejaPresse = false;
         EventManager.StartListening("BouttonRouge", ResetButton);
     }
@@ -34,13 +35,15 @@ public class SpawneurPneuScript : MonoBehaviour
         }
     }
 
+    // Coroutine permettant de temporiser l'apparition des pneus
     IEnumerator CoroutineSpawnPneu()
     {
         for (int i = 0; i < 10; i++)
         {
             if (BoutonDejaPresse)
             {
-                Instantiate(PrefabPneu, SpawnPoint1.transform.position + new Vector3(Random.Range(-0.3f, 0.3f), 0, Random.Range(-0.3f, 0.3f)), Quaternion.identity);
+                // On fait apparaître les pneus à la position de 'SpawnPoint'
+                Instantiate(PrefabPneu, SpawnPoint.transform.position + new Vector3(Random.Range(-0.3f, 0.3f), 0, Random.Range(-0.3f, 0.3f)), Quaternion.identity);
                 GetComponent<GestionSound>().PlaySon();
             }
 
@@ -51,6 +54,8 @@ public class SpawneurPneuScript : MonoBehaviour
     void ResetButton(EventParam evenement)
     {
         EventParamBool evenementBool = (EventParamBool)evenement;
+        // 'evenementBool.Value' est toujours = True
+        // On donne à nouveau le droit de faire apparaître des pneus
         BoutonDejaPresse = !evenementBool.Value;
     }
 }

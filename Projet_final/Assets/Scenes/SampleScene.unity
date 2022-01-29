@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5137,7 +5137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrefabPneu: {fileID: 1629937436331510660, guid: 24fcf362419b1a540b819bc922c87e9c,
     type: 3}
-  SpawnPoint1: {fileID: 413254159642757571}
+  SpawnPoint: {fileID: 413254159642757571}
 --- !u!114 &413254158150242120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5621,7 +5621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413254159642757580}
   m_Layer: 0
-  m_Name: SpawnPneu1
+  m_Name: SpawnPneu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

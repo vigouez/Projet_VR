@@ -69,7 +69,6 @@
     <Compile Include="Assets\Grue\AffichageScore_Chrono.cs" />
     <Compile Include="Assets\Grue\AffichageTopScoreGrue.cs" />
     <Compile Include="Assets\Grue\AffichageTopScorePneu.cs" />
-    <Compile Include="Assets\Grue\Audio.cs" />
     <Compile Include="Assets\Grue\Cube.cs" />
     <Compile Include="Assets\Grue\DebugMessagee.cs" />
     <Compile Include="Assets\Grue\GestionScore.cs" />
@@ -91,7 +90,6 @@
     <Compile Include="Assets\TriPneu\Script\ResetJeux1.cs" />
     <Compile Include="Assets\TriPneu\Script\ScoreManager.cs" />
     <Compile Include="Assets\TriPneu\Script\SpawneurPneuScript.cs" />
-    <Compile Include="Assets\temp.cs" />
     <None Include="Assets\Score\scorePneu.txt" />
     <None Include="Assets\Score\scoreGrue.txt" />
     <Reference Include="UnityEngine">

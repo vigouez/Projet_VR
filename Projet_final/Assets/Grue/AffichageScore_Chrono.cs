@@ -15,10 +15,10 @@ public class AffichageScore_Chrono : MonoBehaviour
     bool estDansLErreur;
     Stopwatch stopWatch = new Stopwatch();
     Text txt;
+
     // Start is called before the first frame update
     void Start()
     {
-
         type = "";
         txt = GetComponent<Text>();
         txt.text = "Standby";
@@ -27,6 +27,7 @@ public class AffichageScore_Chrono : MonoBehaviour
         time = 0;
         hasStarted = false;
         estDansLErreur = false;
+
         EventManager.StartListening("startChemin", startChemin);
         EventManager.StartListening("stopChemin", stopChemin);
         EventManager.StartListening("infoDist", infoDist);
@@ -40,12 +41,16 @@ public class AffichageScore_Chrono : MonoBehaviour
         affiche();
     }
 
+    // Affiche le temps écoulé en fonction du serious game lancé
     void affiche() {
         System.TimeSpan ts = stopWatch.Elapsed;
+
         string elapsedTime = string.Format("{1:00}min{2:00}s{3:00}",
             ts.Hours, ts.Minutes, ts.Seconds,
             ts.Milliseconds / 10);
+
         time = ts.Minutes*60 + ts.Seconds + ts.Milliseconds/1000f;
+
         if (type == "grue"){
             if (hasStarted )
             {
@@ -99,7 +104,7 @@ public class AffichageScore_Chrono : MonoBehaviour
         EventManager.TriggerEvent("startKeyboard", new EventParamScore("pneu", "",(int)time, time));
     }
 
-
+    // Permet de gérer si l'opérateur s'éloigne ou non de la ligne à suivre (serious game de la grue)
     void infoDist(EventParam e)
     {
         dist = ((EventParamFloat)e).getFloat();

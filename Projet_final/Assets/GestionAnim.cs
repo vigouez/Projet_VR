@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Script permettant de faire bouger un robot manipulateur orange (en contre-bas de la scène)
 public class GestionAnim : MonoBehaviour
 {
     public Animator anim;
     bool deja = false;
+
     // Start is called before the first frame update
     void Start()
     {

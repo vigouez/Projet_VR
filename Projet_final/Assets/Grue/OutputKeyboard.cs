@@ -17,6 +17,7 @@ public class OutputKeyboard : MonoBehaviour
         name = "";
         score = 0;
         txt.text = name + score;
+        // Récupération de la touche pressée sur le clavier virtuel
         EventManager.StartListening("key", keyPressed);
         EventManager.StartListening("startKeyboard", startKeyboard);
     }
@@ -28,11 +29,12 @@ public class OutputKeyboard : MonoBehaviour
 
     void keyPressed(EventParam e)
     {
+        // Caractère de la touche
         char c = ((EventParamKey)e).getChar();
-        Debug.Log("la touche : " + c);
+        
         switch (c) {
+            // Si c'est la touche "Entrer"
             case '+':
-                Debug.Log("event sendScore" + name);
                 if(name!="")
                     EventManager.TriggerEvent("sendScore", new EventParamScore(type, name, score,time));
                 type = "last";
@@ -40,10 +42,12 @@ public class OutputKeyboard : MonoBehaviour
                 score = 0;
                 time = 0;
                 break;
+            // Si c'est la touche "Supprimer"
             case '-':
                 name = name.Remove(txt.text.Length - 1, 1);
                 break;
             default:
+                // Le nom de l'opérateur ne doit pas dépasser les 18 caractères
                 if (name.Length < 18)
                 {
                     name = name + "" + c;

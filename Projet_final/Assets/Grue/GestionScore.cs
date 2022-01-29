@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class GestionScore : MonoBehaviour
 {
+    // Fichiers de sauvegarde des scores
     [SerializeField]
     string filenamePneu = "Assets/Score/scorePneu.txt";
 
@@ -35,7 +36,6 @@ public class GestionScore : MonoBehaviour
         getScore();
         dumpScore();
         EventManager.StartListening("sendScore", addScoreEvent);
-        Debug.Log("getting score");
     }
 
     void getScore()
@@ -71,6 +71,7 @@ public class GestionScore : MonoBehaviour
 
     void dumpScore()
     {
+        // Gestion scores pour le serious game des pneus
         string[] stringScores = new string[viewPneu.Count];
         int i = 0;
         foreach (DataRowView row in viewPneu)
@@ -79,6 +80,8 @@ public class GestionScore : MonoBehaviour
         }
         System.IO.File.WriteAllLines(filenamePneu, stringScores);
         EventManager.TriggerEvent("changementScorePneu",new EventParamHighScores(stringScores));
+
+        // Gestion scores pour le serious game de la grue
         stringScores = new string[viewGrue.Count];
         i = 0;
         foreach (DataRowView row in viewGrue)
@@ -98,12 +101,14 @@ public class GestionScore : MonoBehaviour
             case "pneu":
                 infoPneu.Rows.Add(name, time);
                 infoPneu.AcceptChanges();
+                // Tri des performances par les temps croissants
                 viewPneu.Sort = "time ASC";
                 dumpScore();
                 break;
             case "grue":
                 infoGrue.Rows.Add(name,score,time);
                 infoGrue.AcceptChanges();
+                // Tri des performances par les scores décroissants, puis par les temps croissants
                 viewGrue.Sort = "score DESC, time ASC";
                 dumpScore();
                 break;

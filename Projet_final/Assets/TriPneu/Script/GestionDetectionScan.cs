@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GestionDetectionScan : MonoBehaviour
 {
-
     EventAffichageEcran evenementEcran;
 
     // Start is called before the first frame update
@@ -19,8 +18,10 @@ public class GestionDetectionScan : MonoBehaviour
 
     }
 
+    // Quand on rentre dans la zone de détection de la table
     private void OnTriggerEnter(Collider other)
     {
+        // Si l'objet entré est un pneu
         if (other.gameObject.tag == "multiple_collider_fix")
         {
             GameObject pneu = other.gameObject.transform.parent.gameObject;
@@ -28,20 +29,24 @@ public class GestionDetectionScan : MonoBehaviour
             bool lisible = magestionPneu.getLisible();
             bool defectueux = magestionPneu.getDefectueux();
 
-            //Waiting, Error, NoScan, Conform
+            // Si le pneu est lisible (si la détection peut se faire automatiquement)
             if (lisible)
             {
+                // Si le pneu est défectueux
                 if (defectueux)
                 {
+                    // Affichage de l'écran 'Error' sur la console
                     evenementEcran.Value = "Error";
                     GetComponent<GestionSoundMultiple>().PlaySon2();
                 }
+                // Si le pneu n'est pas défectueux
                 else
                 {
                     evenementEcran.Value = "Conform";
                     GetComponent<GestionSoundMultiple>().PlaySon1();
                 }
             }
+            // Si le pneu n'est pas lisible
             else
             {
                 evenementEcran.Value = "NoScan";
@@ -51,6 +56,7 @@ public class GestionDetectionScan : MonoBehaviour
         }
     }
 
+    // Quand on sort de la zone de détection de la table
     private void OnTriggerExit(Collider other)
     {
         evenementEcran.Value = "Waiting";

@@ -19,6 +19,7 @@ public class GestionFinJeu : MonoBehaviour
 
     void LancementSon(EventParam e)
     {
+        // A la fin d'un serious game, on lance un son
         GetComponent<GestionSound>().PlaySon();
     }
 }

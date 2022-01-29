@@ -7,6 +7,7 @@ public class AffichageTopScorePneu : MonoBehaviour
 {
     Text txt;
     string _scores;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class AffichageTopScorePneu : MonoBehaviour
         affiche();
     }
 
+    // A chaque ajout d'un nouveau score, re-affichage des scores
     void chgScores(EventParam e) {
         _scores = "        Top Scores :\n\n";
         _scores += ((EventParamHighScores)e).getStrings();

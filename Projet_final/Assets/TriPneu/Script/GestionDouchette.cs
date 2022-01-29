@@ -8,8 +8,6 @@ public class GestionDouchette : MonoBehaviour
     LineRenderer laser;
     RaycastHit hit;
     private Interactable interactable;
-    [SerializeField]
-    private bool modeTest;
     EventAffichageEcran evenementEcran;
     bool scanEnCours;
 
@@ -26,39 +24,47 @@ public class GestionDouchette : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (interactable != null && interactable.attachedToHand != null || modeTest == true)
+        // Si la douchette est prise à la main
+        if (interactable != null && interactable.attachedToHand != null)
         {
+            // Activation du laser
             laser.enabled = true;
+
+            // Si le raycast touche un objet
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
             {
-                //touché !
+                // Si le raycast touche l'objet du code-barres
                 if (hit.collider.gameObject.tag == "codeBarre")
                 {
                     laser.material.color = Color.green;
                                         
                     GameObject pneu = hit.collider.gameObject.transform.parent.gameObject;
+                    // On regarde si le pneu est défectueux
                     GestionPneu magestionPneu = pneu.GetComponent<GestionPneu>();
                     bool defectueux = magestionPneu.getDefectueux();
 
 
-                    //Waiting, Error, NoScan, Conform
+                    // Affichage écran : Error, Conform
                     if (defectueux)
                     {
+                        // On affiche l'image d'erreur sur l'écran de la console
                         evenementEcran.Value = "Error";
+                        // Lancement du bruitage
                         GetComponent<GestionSoundMultiple>().PlaySon2();
                     }
                     else
                     {
                         evenementEcran.Value = "Conform";
-                        // Lancement du bruitage
                         GetComponent<GestionSoundMultiple>().PlaySon1();
                     }
+                    // Lancement de l'event permettant d'afficher la bonne image sur l'écran de la console
                     EventManager.TriggerEvent("AffichageEcran", evenementEcran);
 
-                    //booleen pour gérer le cas où le laser sort du codeBarre afin de lancer la coroutine permettant de réinitialiser l'affichage de l'écran au bout de 5sec.
+                    // Booleen pour gérer le cas où le laser sort du codeBarre, afin de lancer la coroutine permettant de réinitialiser l'affichage de l'écran au bout de 5sec.
                     scanEnCours = true;
                 }
-                else {
+                else {  // Si le raycast touche un autre objet que le code-barres
+                    // Si on vient de toucher le code-barres
                     if (scanEnCours == true)
                     {
                         scanEnCours = false;
@@ -69,26 +75,30 @@ public class GestionDouchette : MonoBehaviour
                 laser.SetPosition(0, gameObject.transform.position);
                 laser.SetPosition(1, hit.point);
             }
+            // Si le raycast ne touche aucun objet
             else
             {
-                //aucune touche ...
                 laser.material.color = Color.red;
                 laser.SetPosition(0, gameObject.transform.position);
                 laser.SetPosition(1, transform.TransformDirection(Vector3.forward) * 1000);
             }
         }
+        // Si la douchette n'est pas prise à la main
         else
         {
+            // Désactivation du laser
             laser.enabled = false;
         }
 
     }
 
+    // Coroutine permettant de laisser affiché l'image de l'écran de la console pendant 5 secondes
     IEnumerator CoroutineResteAfficherEcran()
     {
         yield return new WaitForSeconds(5.0f);
-        Debug.Log("5sec écoulées");
+
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity);
+        // Si au bout des 5 secondes, on ne touche plus le code-barres, alors on affiche 'Waiting' sur l'écran
         if (hit.collider.gameObject.tag != "codeBarre")
         {
             evenementEcran.Value = "Waiting";

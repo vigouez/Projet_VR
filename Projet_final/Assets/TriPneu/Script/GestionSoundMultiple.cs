@@ -23,12 +23,17 @@ public class GestionSoundMultiple : MonoBehaviour
         // Ajout d'un composant audio à l'objet possédant le script
         gameObject.AddComponent<AudioSource>();
 
-        // Récupération du composant émettant le son
+        // Récupération du composant de l'objet émettant le son
         my_audioSource = GetComponent<AudioSource>();
 
-        my_audioSource.playOnAwake = isPlayedOnAwake;
-        my_audioSource.loop = isLoop;
-        my_audioSource.volume = my_volume;
+        // Si l'AudioSource existe
+        if (my_audioSource != null)
+        {
+            // Paramétrage de l'AudioSource
+            my_audioSource.playOnAwake = isPlayedOnAwake;
+            my_audioSource.loop = isLoop;
+            my_audioSource.volume = my_volume;
+        }
     }
 
     // Update is called once per frame
@@ -39,17 +44,34 @@ public class GestionSoundMultiple : MonoBehaviour
 
     public void PlaySon1()
     {
-        // Set du son
-        my_audioSource.clip = my_audioClip1;
-        // Lancement du son
-        my_audioSource.Play();
+        // Si l'AudioSource et le son passé en paramètre existent
+        if (my_audioSource != null && my_audioClip1 != null)
+        {
+            // Set du son
+            my_audioSource.clip = my_audioClip1;
+            // Lancement du son
+            my_audioSource.Play();
+        }
     }
 
     public void PlaySon2()
     {
-        // Set du son
-        my_audioSource.clip = my_audioClip2;
-        // Lancement du son
-        my_audioSource.Play();
+        if (my_audioSource != null && my_audioClip2 != null)
+        {
+            // Set du son
+            my_audioSource.clip = my_audioClip2;
+            // Lancement du son
+            my_audioSource.Play();
+        }      
+    }
+
+
+    public void StopSon()
+    {
+        if (my_audioSource != null)
+        {
+            // Arrêt du son
+            my_audioSource.Stop();
+        }
     }
 }

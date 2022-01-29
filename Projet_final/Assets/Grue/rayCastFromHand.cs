@@ -36,8 +36,6 @@ public class rayCastFromHand : MonoBehaviour
             {
                 if (mon_bool.GetStateDown(mon_control))
                 {
-                    //Debug.Log("il y a un appui 1 et une touche");
-                    //Debug.Log(hit.collider.gameObject.name);
                     hit.collider.gameObject.SendMessage("keyPressed");
                 }
                 curseur.transform.position = hit.point;

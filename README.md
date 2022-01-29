@@ -29,6 +29,13 @@ Idées pour le README :
     - Affichage de ces données sur des canvas dans le projet
     - Sons d'ambiance
 
+<p align="center">
+    <img src="Images/Logo_Unity.jpg" width=40%/>
+    <img src="Images/HTC_Vive.jpeg" width=20%/>
+    <img src="Images/Serious_Game_Grue.PNG" width=40%/>
+    <img src="Images/Serious_Game_Pneus.PNG" width=40%/>
+</p>
+
 ---
 ---
 

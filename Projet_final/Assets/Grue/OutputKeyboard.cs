@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +10,7 @@ public class OutputKeyboard : MonoBehaviour
     string type;
     int score;
     float time;
-    // Start is called before the first frame update
+
     void Start()
     {
         txt = GetComponent<Text>();
@@ -22,11 +22,6 @@ public class OutputKeyboard : MonoBehaviour
         EventManager.StartListening("startKeyboard", startKeyboard);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     void keyPressed(EventParam e)
     {
         // Caractère de la touche
@@ -35,12 +30,14 @@ public class OutputKeyboard : MonoBehaviour
         switch (c) {
             // Si c'est la touche "Entrer"
             case '+':
-                if(name!="")
-                    EventManager.TriggerEvent("sendScore", new EventParamScore(type, name, score,time));
-                type = "last";
-                name = "";
-                score = 0;
-                time = 0;
+                if (name != "")
+                {
+                    EventManager.TriggerEvent("sendScore", new EventParamScore(type, name, score, time));
+                    type = "last";
+                    name = "";
+                    score = 0;
+                    time = 0;
+                }
                 break;
             // Si c'est la touche "Supprimer"
             case '-':
@@ -48,7 +45,7 @@ public class OutputKeyboard : MonoBehaviour
                 break;
             default:
                 // Le nom de l'opérateur ne doit pas dépasser les 18 caractères
-                if (name.Length < 18)
+                if (name.Length < 20)
                 {
                     name = name + "" + c;
                 }

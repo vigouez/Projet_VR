@@ -32,9 +32,7 @@ public class Cube : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Effecteur" && gameObject.tag == "Depart" && !cheminIsShown) {
-            EventParamGameObject e = new EventParamGameObject();
-            e.setGameObject(other.gameObject);
-            EventManager.TriggerEvent("startChemin",e);
+            EventManager.TriggerEvent("startChemin", new EventParamGameObject(other.gameObject));
         }
         if (other.gameObject == gameObjectEffecteur && gameObject.tag == "Chemin" && cheminIsShown) {
             EventManager.TriggerEvent("stopChemin", null);

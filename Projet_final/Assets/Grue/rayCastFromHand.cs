@@ -1,11 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using System.Collections;
 using Valve.VR;
-//using System.Runtime.InteropServices;
-//using System.Collections.Generic;
 
 public class rayCastFromHand : MonoBehaviour
 {
@@ -22,35 +20,29 @@ public class rayCastFromHand : MonoBehaviour
     void Start()
     {
         playerOperationActionSet.Activate();
+        if (curseur)
+            (curseur.GetComponent<Collider>()).enabled = false;
+        
     }
 
     void Update()
     {
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))//envoie un rayon et recupere le retour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-
-            if (hit.collider.gameObject != null)
+            curseur.transform.position = hit.point;
+            if (mon_bool.GetStateDown(mon_control) && curseur)//la gachette est appuye
             {
-                if (mon_bool.GetStateDown(mon_control))
-                {
-                    hit.collider.gameObject.SendMessage("keyPressed");
-                }
-                curseur.transform.position = hit.point;
+                (curseur.GetComponent<Collider>()).enabled = true;
             }
-
         }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-        }
-    }
-
-    void FixedUpdate()
-    {
-
+        else Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white); // si le rayon n'a pas touché on l'affiche en blanc dans le debug / scene
         
+        if (mon_bool.GetStateUp(mon_control) && curseur)//la gachette est relache
+        {
+            (curseur.GetComponent<Collider>()).enabled = false;
+        }
     }
 }

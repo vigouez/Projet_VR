@@ -85,10 +85,12 @@ public class EventParam
 {
 
 }
-
 public class EventParamGameObject : EventParam
 {
     GameObject _gameobject;
+    public EventParamGameObject(GameObject gameobject) {
+        _gameobject = gameobject;
+    }
     public GameObject getGameObject()
     {
         return _gameobject;

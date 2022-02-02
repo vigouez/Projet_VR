@@ -1,54 +1,38 @@
-# Projet_VR
+********************************************************************
+*								   *
+*		   PROJET REALITE AUGMENTEE			   *
+*		 Réalisation du Serious Games			   *
+*								   *
+********************************************************************
 
-<br/><br/><br/><br/>
-- Si vous faites un push n'oubliais pas d'être dans la bonne version d'unity (2019.4.21)
-sinon ça va être la merde
-- Script "DebugMessage" utile
-- Regrouper les scripts pour la grue dans un même dossier ? (actuellement dans "Grue" et dans "Assets")
-<br/><br/><br/><br/>
-
-
-Idées pour le README :
-- Projet réalisé dans le cadre du cours de Réalité augmentée en 3ème année filière F1
-- Version d'Unity de développement : 2019.4.21
-- Projet réalisé par 5 élèves : 1 groupe de 2 et 1 groupe de 3
-- Explications de chaque serious game et de tout ce qui a été fait dessus :
-  - Grue :
-    - Saisie des poignées
-    - ...
-    - Gestion de la fixation des axes entre les différents éléments de la grue
-  - Pneu :
-    - Génération de 10 pneus
-    - Saisie des pneus
-    - Détection de la conformité d'un pneu (de façon automatique ou de façon manuelle avec la douchette)
-    - ...
-    - Allumage de lumières verte et rouge pour connaître l'état de la conformité d'un pneu
-  - Les 2 :
-    - Démarrage chrono
-    - Sauvegarde des différents scores et temps + saisi du nom
-    - Affichage de ces données sur des canvas dans le projet
-    - Sons d'ambiance
-
-<p align="center">
-    <img src="Images/Logo_Unity.jpg" width=40%/>
-    <img src="Images/HTC_Vive.jpeg" width=20%/>
-    <img src="Images/Serious_Game_Grue.PNG" width=40%/>
-    <img src="Images/Serious_Game_Pneus.PNG" width=40%/>
-</p>
-
----
----
-
-
-<br/>
-Développeurs :
-
-    - CHAPELLE Etienne
-    - KUNTZLER Quentin
-    - GOUEZ Virgil
+Composition du groupe :			Professeur : 
+    - BECOUZE Florent			    - CHIRON Loïck
     - CATINON Audric
-    - BECOUZE Florent
+    - CHAPELLE Etienne
+    - GOUEZ Virgil
+    - KUNTZLER Quentin
 
-Professeur :
+Objectif du projet :
 
-    - CHIRON Loïck
+Le projet est divisé en deux grandes parties. Chacune est un "serious game" dans un univers industriel.
+
+  **** Partie 1 : contrôle qualité des pneumatiques ****
+
+Dans ce serious game, l'utilisateur doit effectuer un test sur la validité de pneumatiques. Ces derniers apparaissent à l'appui sur le bouton "vert" de la console, et atterrisent
+dans un bac de réception. Un chronomètre se déclenche également à cet instant. Les pneus générés peuvent être valides ou invalides. Leur code barre peut également se trouver dans
+deux états : soit il est lisible et détecté automatiquement lorsqu'on le pose sur la plateforme de détection, soit il est illisible, auquel cas l'utilisateur doit se saisir de la 
+douchette pour scanner le code barre et effectuer le test. Le résultat du test est affiché sur l'écran, et une lumière verte ou rouge indique aussi le résultat.
+
+Ensuite, l'utilisateur doit placer le pneu dans la benne correspondante, rouge ou verte selon la validité du pneu. Au bout de 10 pneus correctement placés, le temps se stoppe. Il 
+est enregistré et classé parmi les autres après que l'utilisateur ait saisi son nom sur le clavier virtuel.
+
+Le bouton rouge de la console permet d'arrêter le serious game à n'importe quel moment, supprimant ainsi tous les pneus générés et réinitialisant le chronomètre.
+
+  **** Partie 2 : simulateur grue de lavage ****
+
+Dans cette deuxième partie, l'utilisateur doit se saisir de la grue de lavage grâce aux deux poignées bleues. Une fois la grue saisie, l'utilisateur doit toucher le cube bleu afin de
+déclencher le début du chronomètre. une ligne verte apparaît ensuite, et le but du jeu est de rejoindre l'autre cube bleu avec la grue sans s'éloigner de la ligne verte. S'il s'éloigne,
+la ligne devient rouge et des points sont perdus. Le chronomètre se stoppe une fois le deuxième cube bleu atteint. Le score est donc calculé en fonction du temps passé loin de la ligne
+de direction. En cas d'égalité, c'est le temps mis pour rejoindre le deuxième cube qui départage. 
+
+Enfin, l'utilisateur doit saisir son nom afin d'enregistrer son score dans le classement.

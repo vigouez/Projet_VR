@@ -12,12 +12,6 @@ public class GestionDetectionScan : MonoBehaviour
         evenementEcran = new EventAffichageEcran();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     // Quand on rentre dans la zone de détection de la table
     private void OnTriggerEnter(Collider other)
     {

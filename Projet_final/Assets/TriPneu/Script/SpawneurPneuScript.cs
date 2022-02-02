@@ -19,12 +19,6 @@ public class SpawneurPneuScript : MonoBehaviour
         EventManager.StartListening("BouttonRouge", ResetButton);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SpawnPneu()
     {
         if (!BoutonDejaPresse)

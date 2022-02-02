@@ -11,10 +11,8 @@ public class KeyboardScript : MonoBehaviour
 
     public void alphabetFunction(string alphabet)
     {
-
-
+        
         TextField.text=TextField.text + alphabet;
-
     }
 
     public void BackSpace()

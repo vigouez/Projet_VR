@@ -62,32 +62,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GestionAnim.cs" />
-    <Compile Include="Assets\GestionFinJeu.cs" />
-    <Compile Include="Assets\GestionSonGrue.cs" />
-    <Compile Include="Assets\GestionSonTouches.cs" />
-    <Compile Include="Assets\Grue\AffichageScore_Chrono.cs" />
-    <Compile Include="Assets\Grue\AffichageTopScoreGrue.cs" />
-    <Compile Include="Assets\Grue\AffichageTopScorePneu.cs" />
+    <Compile Include="Assets\Affichage\AffichageScore_Chrono.cs" />
+    <Compile Include="Assets\Affichage\AffichageTopScoreGrue.cs" />
+    <Compile Include="Assets\Affichage\AffichageTopScorePneu.cs" />
+    <Compile Include="Assets\Animation\GestionAnim.cs" />
     <Compile Include="Assets\Grue\Cube.cs" />
-    <Compile Include="Assets\Grue\DebugMessagee.cs" />
-    <Compile Include="Assets\Grue\GestionScore.cs" />
     <Compile Include="Assets\Grue\JointPush.cs" />
-    <Compile Include="Assets\Grue\KeybordKey.cs" />
-    <Compile Include="Assets\Grue\OutputKeyboard.cs" />
-    <Compile Include="Assets\Grue\rayCastFromHand.cs" />
+    <Compile Include="Assets\Grue\VerifGrabbed.cs" />
+    <Compile Include="Assets\Keyboard\KeybordKey.cs" />
+    <Compile Include="Assets\Keyboard\OutputKeyboard.cs" />
+    <Compile Include="Assets\Keyboard\rayCastFromHand.cs" />
     <Compile Include="Assets\OSK\Assets\Scripts\KeyboardDragHandler.cs" />
     <Compile Include="Assets\OSK\Assets\Scripts\KeyboardScript.cs" />
     <Compile Include="Assets\Resources\eventmanager-cs\EventManager.cs" />
+    <Compile Include="Assets\Score\GestionScore.cs" />
+    <Compile Include="Assets\Son\GestionFinJeu.cs" />
+    <Compile Include="Assets\Son\GestionSonGrue.cs" />
+    <Compile Include="Assets\Son\GestionSonTouches.cs" />
+    <Compile Include="Assets\Son\GestionSound.cs" />
+    <Compile Include="Assets\Son\GestionSoundMultiple.cs" />
     <Compile Include="Assets\TriPneu\Script\GestionAffichageEcran.cs" />
     <Compile Include="Assets\TriPneu\Script\GestionDetectionContainer.cs" />
     <Compile Include="Assets\TriPneu\Script\GestionDetectionScan.cs" />
     <Compile Include="Assets\TriPneu\Script\GestionDouchette.cs" />
     <Compile Include="Assets\TriPneu\Script\GestionLumieres.cs" />
     <Compile Include="Assets\TriPneu\Script\GestionPneu.cs" />
-    <Compile Include="Assets\TriPneu\Script\GestionSound.cs" />
-    <Compile Include="Assets\TriPneu\Script\GestionSoundMultiple.cs" />
-    <Compile Include="Assets\TriPneu\Script\ResetJeux1.cs" />
+    <Compile Include="Assets\TriPneu\Script\ResetJeu.cs" />
     <Compile Include="Assets\TriPneu\Script\ScoreManager.cs" />
     <Compile Include="Assets\TriPneu\Script\SpawneurPneuScript.cs" />
     <None Include="Assets\Score\scorePneu.txt" />
@@ -276,7 +276,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -624,31 +624,31 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Bureau/Cours/ISIMA/ZZ3_F1_Alternance/Semestre_2/Realite_augmentee/M.Chiron/Projet/Projet_VR/Projet_final/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/aucatinon/projet_VR/Projet_VR/Projet_final/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -12,12 +12,6 @@ public class GestionLumieres : MonoBehaviour
         EventManager.StartListening(gameObject.name, SwitchLumiere);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Activation / désactivation des lumières liées à ce script
     void SwitchLumiere(EventParam evenement)
     {

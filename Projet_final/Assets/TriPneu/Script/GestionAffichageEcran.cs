@@ -27,12 +27,6 @@ public class GestionAffichageEcran : MonoBehaviour
         evenementLumiere = new EventParamBool();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // En fonction de la valeur de l'event, on affiche l'image correspondante sur l'écran de la console
     // Les lumières verte et rouges sont aussi activées/désactivées
     void UpdateScreen(EventParam evenement)

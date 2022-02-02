@@ -12,12 +12,6 @@ public class GestionDetectionContainer : MonoBehaviour
         evenementComptage = new EventComptagePneus();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     // Quand on rentre dans une des 2 bennes (pneu OK ; pneu KO)
     private void OnTriggerEnter(Collider other)
     {

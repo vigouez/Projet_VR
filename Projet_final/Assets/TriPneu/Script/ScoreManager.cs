@@ -15,12 +15,6 @@ public class ScoreManager : MonoBehaviour
         EventManager.StartListening("ResetNombrePneus", ResetNombrePneus);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // On met à jour le nombre de pneu bien catégorisé dans les bonnes bennes
     void UpdateSommePneus(EventParam evenement)
     {

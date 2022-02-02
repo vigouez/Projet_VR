@@ -15,12 +15,6 @@ public class GestionPneu : MonoBehaviour
         lisible = (Random.Range(0.0f, 1.0f) <= 0.8) ? true : false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public bool getLisible()
     {
         return lisible;

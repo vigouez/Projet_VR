@@ -1,16 +1,15 @@
-********************************************************************
-*								   *
-*		   PROJET REALITE AUGMENTEE			   *
-*		 Réalisation du Serious Games			   *
-*								   *
-********************************************************************
+PROJET REALITE AUGMENTEE
+Réalisation du Serious Games
 
-Composition du groupe :			Professeur : 
-    - BECOUZE Florent			    - CHIRON Loïck
+Composition du groupe :	
+    - BECOUZE Florent			    
     - CATINON Audric
     - CHAPELLE Etienne
     - GOUEZ Virgil
     - KUNTZLER Quentin
+
+Professeur : 
+    - CHIRON Loïck
 
 Objectif du projet :
 
